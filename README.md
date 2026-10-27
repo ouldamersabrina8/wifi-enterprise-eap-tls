@@ -18,6 +18,8 @@ L'objectif est de comprendre et de mettre en pratique les mécanismes d'authenti
 
 ## Architecture du laboratoire
 
+![Architecture WPA2-Enterprise EAP-TLS](architecture-wpa2-enterprise.png)
+
 Le laboratoire repose sur une machine virtuelle Ubuntu hébergeant les différents composants du réseau Wi-Fi.
 
 | Composant | Technologie | Fonction |
