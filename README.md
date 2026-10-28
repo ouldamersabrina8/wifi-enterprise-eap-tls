@@ -22,15 +22,6 @@ Le laboratoire repose sur une machine virtuelle Ubuntu hébergeant les différen
 
 ![Architecture WPA2-Enterprise EAP-TLS](architecture-wpa2-enterprise.png)
 
-| Composant | Technologie | Fonction |
-|---|---|---|
-| Système | Ubuntu Linux | Environnement du laboratoire |
-| Point d'accès | hostapd | Authenticator 802.1X |
-| Serveur d'authentification | FreeRADIUS | Validation des identités et certificats |
-| Client Wi-Fi | wpa_supplicant | Supplicant 802.1X |
-| Interfaces sans fil | mac80211_hwsim | Simulation des interfaces Wi-Fi |
-| Analyse réseau | Wireshark | Capture et analyse des échanges |
-
 ### Fonctionnement général
 
 1. Le client Wi-Fi demande à rejoindre le réseau sécurisé.
