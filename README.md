@@ -18,9 +18,9 @@ L'objectif est de comprendre et de mettre en pratique les mécanismes d'authenti
 
 ## Architecture du laboratoire
 
-![Architecture WPA2-Enterprise EAP-TLS](architecture-wpa2-enterprise.png)
-
 Le laboratoire repose sur une machine virtuelle Ubuntu hébergeant les différents composants du réseau Wi-Fi.
+
+![Architecture WPA2-Enterprise EAP-TLS](architecture-wpa2-enterprise.png)
 
 | Composant | Technologie | Fonction |
 |---|---|---|
@@ -112,13 +112,41 @@ sudo wpa_supplicant -i wlan1 -c wpa_supplicant-eap-tls.conf -dd
 
 ## Documentation et preuves techniques
 
-Le dépôt sera enrichi progressivement avec :
 
-- Un schéma de l'architecture du laboratoire.
-- Des exemples de fichiers de configuration anonymisés.
-- Des captures d'écran des services et des tests.
-- Des captures Wireshark illustrant les échanges d'authentification.
-- Une documentation des difficultés rencontrées et des solutions appliquées.
+## Captures du laboratoire
+
+Les captures suivantes proviennent du laboratoire réalisé sous Ubuntu avec WPA2-Enterprise, IEEE 802.1X et EAP-TLS.
+
+### 1. Interfaces Wi-Fi virtuelles
+
+![Interfaces Wi-Fi virtuelles](screenshots/01-interfaces-wifi.png)
+
+Vérification des interfaces Wi-Fi virtuelles créées avec `mac80211_hwsim` pour simuler le point d'accès et le client.
+
+### 2. Serveur FreeRADIUS
+
+![Serveur FreeRADIUS](screenshots/02-freeradius-ready.png)
+
+Exécution de FreeRADIUS en mode débogage pour surveiller le service d'authentification.
+
+### 3. Configuration du point d'accès
+
+![Configuration hostapd](screenshots/03-hostapd-configuration.png)
+
+Configuration du point d'accès avec `hostapd` pour utiliser WPA2-Enterprise et communiquer avec le serveur RADIUS.
+
+### 4. Configuration du client EAP-TLS
+
+![Configuration wpa_supplicant](screenshots/04-wpa-supplicant-configuration.png)
+
+Configuration du client `wpa_supplicant` avec la méthode EAP-TLS et les certificats numériques nécessaires à l'authentification.
+
+### 5. Analyse des échanges EAP/RADIUS
+
+![Diagnostic EAP/RADIUS](screenshots/05-echanges-eap-radius.png)
+
+Observation des messages d'authentification et des retransmissions dans les journaux du laboratoire. Cette capture illustre le diagnostic des échanges, sans constituer à elle seule une preuve d'authentification réussie.
+
 
 **Note de sécurité :** aucune clé privée, aucun secret RADIUS ni aucun identifiant sensible ne sera publié.
 
